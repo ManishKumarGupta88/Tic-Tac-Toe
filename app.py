@@ -1,14 +1,11 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, send_file
+import os
 
-app = Flask(__name__, static_folder='static', template_folder='templates')
+app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
-
-@app.route('/api/hello')
-def hello():
-    return jsonify({'message': 'Tic Tac Toe is ready!'}), 200
+    return send_file(os.path.join(os.path.dirname(__file__), 'index.html'))
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5000, debug=True)
