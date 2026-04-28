@@ -35,4 +35,6 @@ git push -u origin main
 ## Notes
 
 - This project runs on localhost after you push or clone it.
-- GitHub Pages does not host Python apps directly; use local host or a cloud host like Heroku, Railway, or Render if you want an online URL.
+- GitHub Pages does not host Python apps directly; the Flask server in `app.py` cannot run there.
+- To make GitHub Pages show the game, the site must use static files (`index.html`, `static/style.css`, etc.).
+- If you want a live online URL for the Flask version, use a Python-capable host such as Railway, Render, or Heroku.
